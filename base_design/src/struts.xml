@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- 常量配置 -->
+	 <constant name="struts.devMode" value="false" />
+	 <constant name="struts.i18n.encoding" value="utf-8"/>
+	 <constant name="struts.enable.DynamicMethodInvocation" value="true" /><!-- 动态DMI方法调用 --> 
+ 	 <!-- 缺省包 -->
+ 	 <package name="default" namespace="/" extends="struts-default">
+ 	 	<!-- <global-results><result name="exceptionR">/error.jsp</result></global-results>
+ 	 	<global-exception-mappings><exception-mapping result="exceptionR" exception="java.lang.RuntimeException"></exception-mapping></global-exception-mappings> -->
+ 	 	<action name="user_*" class="userAction" method="{1}">
+			<result name="success">/index.jsp</result>
+ 	 	</action>
+ 	 </package>
+
+</struts>
